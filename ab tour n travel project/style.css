@@ -1,0 +1,365 @@
+*,
+*::after,
+*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+}
+.bt{
+    display: inline-block;
+    padding: 1em 2.5em;
+    text-decoration: none;
+    border-radius: 50px;                             /*border radius se button circle shape me ho jata hai*/
+    cursor: pointer;                                 /* isko wo curser me ik hath aata hai usko laane k liye hai*/
+    /* outline: none; */
+    margin-top: 1em;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.bt-primary{
+    color: orangered;
+    background: rgba(0, 0, 255, 0.7);
+}
+
+/* ######################## navbar styling ####################### */
+
+/*#### for dekstop mode  ############# */
+
+.navbar input[type='checkbox'],
+.navbar .hamburgur-lines{
+    display: none;
+}
+
+.navbar{
+    box-shadow: 0px 5px 10px 0px lightblue;        /* x-axis y-axis blur sprade color*/
+    position: fixed;
+    width: 100%;                                     /*position fixed karne se wo apni width kaam karliya tha toh dubbra se width 100% deni padi*/
+    background: lightgray;
+    opacity: 0.85;                                   /*for trasparancy in navbar*/
+    z-index: 999;                                    /*navbaar ko hsmesha upper hi rkhna hai ki content bhi iske noiche hi aaye toh iski z-index sabse high rakhe hai*/
+}
+.navbar-container{
+    display: flex;
+    justify-content:space-between ;
+    height: 64px;                                    /*jistna navbar ko height ka zarrurat hoga utna hi lega isliye style k liye khud se height set karna pada*/
+    align-items: center;
+}
+.menu-places{
+    order: 2;
+    display: flex;
+}
+.menu-places li{
+    list-style: none;
+    margin-left: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.logo{
+    order: 1;
+    font-size: 3rem;
+}
+.navbar .menu-places a{
+    color: rgb(3, 48, 88);
+    text-decoration: none;
+    /* font-weight: 500; */
+    transition:color 0.3s ease-in-out;
+}
+.navbar .menu-places a:hover{
+    color: magenta;   
+}
+
+/* ################ showcase area styling  ######################## */
+.showcase-area{
+    height: 50vh;
+    background:  url(./image/b1.jpg);                 /* use this before url linear-gradient(rgba(),rgba()) for lighter or darker the image*/
+    background-size: cover;                           /*ye image ko cover photo k jaise wide bnta hai*/
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.showcase-container{
+    display: flex;
+    flex-direction: column;                            /* isko coloumn me niche lane k liye use hus hai, uske baad justify content main axis me center me laane me use aaya hai,uske baad aling item wo box nhi andar ka likha hua part ko center me kar diya hai */
+    justify-content: center;
+    align-items: center;
+    height: 100%;                                       /* iska bahut importance hai upper ka teeno sirf bich me laya wo bhi header k bech me na ki page k beech me pr height set karne se wo page k beech me aagya */
+    font-size: 1.6rem;     
+}
+/* ####################### about us ################ */
+#about{
+    padding: 50px 0px;                                   /*50px top and bottom or 0px left or right k liye hai*/
+    background: rgba(173, 216, 230, 0.376);
+}
+.about{
+    display: flex;
+    flex-wrap: wrap;
+}
+#about h2{
+    font-size: 3.2rem;
+}
+#about p{
+    font-size: 1.6rem;
+    color: rgba(0, 0, 0, 0.752);
+}
+#about .small{
+    font-size: 1.6rem;
+    color: rgba(0, 0, 0, 0.798);
+    font-weight: 600;
+}
+.about-img{
+    flex: 1 1 400px;                                         /* 1st flex groww k liye 2nd flex shrink k liye ye groww jo rest img ya jgh ko occupai ya shrink hoga*/
+    padding: 30px;
+    /* border: 2px solid red; */
+    transform: translatex(150%);                              /*isko bahar bhjne k liye lga hai*/  /*translate 150% ka mtlb hai wo screen k bahar chla jaye agr negative dalenge toh wo right side se wo wapas aayega*/
+    animation: about-img-animation 1s ease-in-out forwards;   /* name kuch bhi de sakte hai 1s time hai forward isily lga hai ki jo animate hone k baad dubbara oringnal position p na aaye*/
+}
+@keyframes about-img-animation{
+    100%{                                                      /*isko wapas lane k liye lagaya gya hai*/
+        transform: translate(0);
+    }
+}
+.about-text{
+    flex: 1 1 400px;
+    padding: 30px;
+    margin: auto;                                              /*isko karne se text jo h automatic center me aajayega*/
+    transform: translateX(-150%);                              /*isko bahar bhjne k liye lga hai*/  /*translate 150% ka mtlb hai wo screen k bahar chla jaye agr negative dalenge toh wo right side se wo wapas aayega*/
+    animation: about-text-animation 1s ease-in-out forwards; 
+}
+@keyframes about-text-animation{
+    100%{                                                      /*isko wapas lane k liye lagaya gya hai*/
+        transform: translate(0);
+    }
+}
+.about-img .src{
+    display: block;
+    height: 400px;
+    max-width: 100%;
+    margin: auto;
+    object-fit: cover;
+    object-position: center;
+}
+/* ##################### destination ########################## */
+#destination{
+    padding: 5rem 0 10rem 0;                                /*top,right,bottom,left*/
+}
+#destination h2{
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    color: darksalmon;
+}
+.destination-container{
+    display: flex;
+    justify-content: space-between;
+}
+.destination-container img{
+    display: block;
+    height: 200px;
+    width: 100%;
+    margin: auto;
+    /* border-radius: 20%; */
+    object-fit: cover;
+    object-position: center;
+    /* flex-wrap: wrap;  */
+}
+.img-container{
+    margin: 0 1rem;                                          /*top-bottom 0,left-right 1rem*/
+    position: relative;
+}
+.img-content{
+    position: absolute;
+    top: 70%;                                                 /* transtion add hoga toh wo niche se upper aayega isily syed add kiya gya hai*/
+    left: 50%;
+    transform: translate(-50%,-50%);
+    opacity:0 ;
+    z-index: 2;
+    text-align: center;
+    transition:all 0.3s ease-in-out;                          /*transition add karne k liye img-container p after psudo element lga uske baad hover after lga uske baad hover after lga img content p*/
+}
+
+.img-content h3{
+    color:lightslategrey ;
+    font-size: 1.5rem;
+}
+
+.img-content a{
+    font-size: 1.2rem;
+}
+
+.img-container::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:rgba(0, 0, 0, 0.597);
+    opacity: 0;
+    z-index: 1;
+    transform: scaleY(0);
+    transform-origin:100% 100% ;
+    transition:all 0.3s ease-in-out;
+}
+.img-container:hover::after{
+    opacity: 1;
+    transform: scaleY(1);
+}
+.img-container:hover .img-content{
+    opacity: 1;
+    top: 40%;
+}
+/* ############################### destination types ################# */
+.destination-type{
+    width: 100%;
+}
+.destination-point-heading{
+    font-size: 4rem;
+    text-align: center;
+    font-weight: 400;
+    /* text-transform: uppercase; */
+}
+.destination-point-container{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px 0px 30px 0px;
+}
+.destination-point-container img{
+    display: block;
+    width: 250px;
+    height: 250px;
+    border-radius: 20%;
+    object-fit: cover;
+    object-position: center;
+}
+.destination-point-types{
+    display: flex;
+    flex: 1 1 600px;
+    justify-content: space-evenly;
+    margin-bottom: 3rem;
+}
+.destination-description{
+    margin: auto 1.5rem;
+}
+.destination-description .destination-tittle{
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: darkblue;
+}
+.destination-description p{
+    font-size:1.4rem ;
+    font-weight: 400;
+}
+.destination-description .destination-budget{
+    color: burlywood;
+    font-weight: 600;
+}
+
+/* ####################### review styling ############################# */
+
+#review{
+    padding: center;
+    background: lightcyan;
+}
+.review-tittle{
+    text-align: center;
+    font-size:2rem ;
+    font-weight: 400;
+    color:darkcyan;
+}
+.review-container{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.6rem;
+    padding: 1rem;
+}
+.review-container .star{
+    color: darkorange;
+}
+.review-box .review-text{
+    margin: 1rem 0;
+    color: rgba(1, 13, 36, 0.945);
+}
+.review-box{
+    text-align: center;
+    padding: 1rem;
+}
+.visitor-name{
+    font-size:0.9rem ;
+    font-weight: 600;
+}
+.visitor-photo img{
+    display: block;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    margin: auto;
+}
+
+/* ########################### contact us styling ################################# */
+#contact-container{
+    padding: 5rem 0;
+    background-color: rgb(88, 2, 2);
+}
+
+.contact-container{
+    display: flex;
+    background-color:lightblue;
+    justify-content: space-around;
+}
+.contact-img{
+    width: 50%;
+}
+.contact-img img{
+    display: block;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+    width: 100;
+    margin-top: 50px;
+}
+.form-container input{
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid lightsalmon;
+    padding: 1rem 0;
+    box-shadow: none;
+    outline: none;
+    margin-bottom: 1rem;
+    color: brown;
+    font-weight: 500;
+}
+.form-container textarea{
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid lightsalmon;
+    padding: 1rem 0;
+}
+.form-container h2{
+    font-size: 3rem;
+    /* font-weight: 400; */
+    color: rgb(61, 17, 1);
+    margin-bottom: 1rem;
+}
+.form-container a{
+    font-size: 1.2rem;
+}
+
+/* ############################### footersyling ################## */
+#footer h2{
+    text-align: center;
+    height: 2px;
+    padding: 1rem;
+    font-weight: 500;
+    color: #e27a0e;
+}
